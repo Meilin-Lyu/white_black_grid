@@ -17,7 +17,7 @@ def board():
     WIDTH = 40
     HEIGHT = 40
     MARGIN = 1
-  
+    # setting grid
     grid = []
     for row in range(10):
         grid.append([])
