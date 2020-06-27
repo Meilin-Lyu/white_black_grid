@@ -3,7 +3,7 @@
 # Import a library of functions called 'pygame'
 import pygame
 
-
+# game board
 def board(): 
 # Define some colors
     pygame.init()
