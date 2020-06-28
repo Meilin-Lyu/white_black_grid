@@ -23,8 +23,8 @@ WINDOW_SIZE = [920,450]
  
 screen = pygame.display.set_mode(WINDOW_SIZE)
 
-def reset():
-    pygame.draw.rect(screen, GREEN,(150,450,100,50))
+#def reset():
+ #   pygame.draw.rect(screen, GREEN,(150,450,100,50))
 
 
 def auto():
