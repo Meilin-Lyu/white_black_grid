@@ -1,5 +1,4 @@
 
- 
 # Import a library of functions called 'pygame'
 import pygame
 import random
@@ -23,8 +22,12 @@ WINDOW_SIZE = [920,450]
  
 screen = pygame.display.set_mode(WINDOW_SIZE)
 
-#def reset():
- #   pygame.draw.rect(screen, GREEN,(150,450,100,50))
+
+   
+
+
+
+   
 
 
 def auto():
@@ -80,6 +83,7 @@ def board():
     touch = False
     reset = False
     screen.fill(BLACK)
+    pygame.draw.rect(screen, RED,(440,300,50,40))
     grid2 = auto()
     for row2 in range(10):
                     for column2 in range(10):
@@ -97,16 +101,19 @@ def board():
                 quit()
             elif event.type ==pygame.MOUSEBUTTONDOWN:
 
-                if(reset == True):
-                    pygame.draw.rect(screen,(255,255,255),[(MARGIN+WIDTH)*column2+MARGIN,
-                    (MARGIN+HEIGHT)*row2+MARGIN,WIDTH,HEIGHT])
+                
 
             
                 pos = pygame.mouse.get_pos()
-                if((pos[0]<=394) and (pos[1]<=380)):
+                
                 
 
-                    print(pos)
+
+                print(pos)
+                if((pos[0]<=394) and (pos[1]<=401)):
+                
+
+                    
                     column = pos[0]//(WIDTH+MARGIN)
                     row = pos[1]//(HEIGHT+MARGIN)
                
@@ -116,6 +123,8 @@ def board():
                     screen.fill(BLACK)
                     screen.blit(smileImg,(500,0))
                 
+                
+
 
                 
                 for row in range(10):
@@ -124,7 +133,11 @@ def board():
                         pygame.draw.rect(screen,color,[(MARGIN+WIDTH)*column+MARGIN,
                         (MARGIN+HEIGHT)*row+MARGIN,WIDTH,HEIGHT])
                 
-
+                        if(((pos[0]<=488)and(pos[0]>=440)) and ((pos[1]>=299)and(pos[1]<=338))):
+                            grid[row][column]= False
+                            pygame.draw.rect(screen,(255,255,255),[(MARGIN+WIDTH)*column+MARGIN,
+                            (MARGIN+HEIGHT)*row+MARGIN,WIDTH,HEIGHT])
+                            
               
 
         pygame.display.flip()
