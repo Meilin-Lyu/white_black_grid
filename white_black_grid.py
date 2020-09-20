@@ -22,14 +22,6 @@ WINDOW_SIZE = [920,450]
  
 screen = pygame.display.set_mode(WINDOW_SIZE)
 
-
-   
-
-
-
-   
-
-
 def auto():
     grid2 =[]
     for row in range(10):
@@ -63,22 +55,12 @@ def reColor(grid,column,row):
 # game board for white back grid
 
 def board(): 
-
-   
-   
-    
-    # setting grid
+ # setting grid
     grid = []
-    
-    
-
     for row in range(10):
         grid.append([])
         for column in range(10):
             grid[row].append(False)
-    
-     
-    
     loop = True
     touch = False
     reset = False
@@ -87,7 +69,6 @@ def board():
     grid2 = auto()
     for row2 in range(10):
                     for column2 in range(10):
-
                         color = WHITE if not grid2[row2][column2] else BLACK
                         pygame.draw.rect(screen,color,[(MARGIN+WIDTH)*column2+MARGIN+510,
                         (MARGIN+HEIGHT)*row2+MARGIN,WIDTH,HEIGHT])
@@ -100,32 +81,16 @@ def board():
                 pygame.quit()
                 quit()
             elif event.type ==pygame.MOUSEBUTTONDOWN:
-
-                
-
-            
-                pos = pygame.mouse.get_pos()
-                
-                
-
-
+               pos = pygame.mouse.get_pos()
                 print(pos)
                 if((pos[0]<=394) and (pos[1]<=401)):
-                
-
-                    
                     column = pos[0]//(WIDTH+MARGIN)
                     row = pos[1]//(HEIGHT+MARGIN)
-               
                     grid = reColor(grid,column,row)
               
                 if(grid==grid2):
                     screen.fill(BLACK)
                     screen.blit(smileImg,(500,0))
-                
-                
-
-
                 
                 for row in range(10):
                     for column in range(10):
